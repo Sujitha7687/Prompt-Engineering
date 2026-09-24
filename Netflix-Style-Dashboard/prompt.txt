@@ -1,0 +1,249 @@
+Create a modern, premium **Netflix-style streaming dashboard** using only **HTML, CSS, and vanilla JavaScript**.
+
+### Project Objective
+
+Build a responsive streaming-platform dashboard inspired by modern OTT interfaces. Do not copy Netflix logos, copyrighted artwork, or exact branding. Use an original streaming brand name such as **StreamFlix**.
+
+### Technology Requirements
+
+* HTML5
+* CSS3
+* Vanilla JavaScript
+* No React
+* No Bootstrap
+* No external JavaScript frameworks
+* Use clean, well-structured and reusable code
+* Separate files:
+
+  * `index.html`
+  * `style.css`
+  * `script.js`
+
+### Dashboard Layout
+
+#### 1. Navigation Bar
+
+Create a fixed top navigation bar containing:
+
+* StreamFlix logo/name
+* Home
+* TV Shows
+* Movies
+* My List
+* Search icon
+* Notification icon
+* User profile icon
+
+The navigation should remain visible while scrolling.
+
+#### 2. Hero Section
+
+Create a large cinematic hero banner below the navigation bar.
+
+Include:
+
+* Large movie/show background image
+* Movie title
+* Short description
+* Genre and year
+* Rating
+* **Play Now** button
+* **More Info** button
+
+Add a dark gradient overlay so the text remains clearly readable.
+
+#### 3. Trending Now
+
+Create a horizontally scrollable movie card section.
+
+Each card should contain:
+
+* Poster image
+* Movie title
+* Rating
+* Genre
+
+Add hover effects:
+
+* Slight card scaling
+* Smooth transition
+* Dark overlay
+* Play button appearing on hover
+
+#### 4. Popular Movies
+
+Create another horizontal movie carousel with multiple movie cards.
+
+Include:
+
+* Previous button
+* Next button
+* Smooth horizontal scrolling using JavaScript
+
+#### 5. Continue Watching
+
+Create a "Continue Watching" section.
+
+Each card should contain:
+
+* Thumbnail
+* Movie title
+* Episode information
+* Progress bar
+* Remaining time
+
+Example:
+"Stranger Things — S02 E04"
+with a visible viewing-progress indicator.
+
+#### 6. Recommended For You
+
+Create a responsive grid of recommended movies and shows.
+
+Use JavaScript to dynamically generate the cards from an array of movie objects.
+
+Example data structure:
+
+```javascript
+const movies = [
+    {
+        title: "The Last Horizon",
+        genre: "Sci-Fi",
+        rating: "8.7",
+        year: "2026",
+        image: "image-url"
+    }
+];
+```
+
+#### 7. Search Functionality
+
+Add a search box in the navigation bar.
+
+When the user enters a movie title:
+
+* Filter the available movie cards
+* Display matching results
+* Show "No results found" when there are no matches
+
+The search should work dynamically without refreshing the page.
+
+#### 8. Movie Details Modal
+
+When the user clicks a movie card, open a modal containing:
+
+* Large movie image
+* Title
+* Description
+* Genre
+* Year
+* Rating
+* Duration
+* Play button
+* Add to My List button
+
+The modal should close when clicking:
+
+* Close button
+* Outside the modal
+
+#### 9. My List
+
+Implement a functional **My List** feature using JavaScript.
+
+When the user clicks "Add to My List":
+
+* Add the selected movie
+* Update the My List section
+* Change the button state to "Added"
+
+Use `localStorage` so the user's My List remains available after refreshing the page.
+
+### Visual Design
+
+Use a premium streaming-platform design:
+
+* Dark background
+* Black / deep charcoal interface
+* White typography
+* Red accent color
+* Large cinematic imagery
+* Rounded movie cards
+* Subtle shadows
+* Smooth transitions
+* Modern typography
+* Clean spacing
+* Professional SaaS/OTT dashboard appearance
+
+Avoid:
+
+* Excessive animations
+* Cluttered UI
+* Cartoon-style graphics
+* Unnecessary gradients
+* Inline CSS
+* Inline JavaScript
+
+### Responsive Design
+
+The dashboard must work properly on:
+
+* Desktop
+* Laptop
+* Tablet
+* Mobile
+
+Use CSS media queries.
+
+On mobile:
+
+* Convert the navigation into a compact menu
+* Make movie cards smaller
+* Allow horizontal scrolling for movie categories
+* Adjust the hero section height
+* Make the modal responsive
+
+### JavaScript Functionality
+
+Implement:
+
+1. Dynamic movie rendering
+2. Search
+3. Movie filtering
+4. Horizontal carousel navigation
+5. Movie details modal
+6. Play button interaction
+7. Add/remove from My List
+8. `localStorage`
+9. Responsive navigation menu
+10. Smooth scrolling
+
+### Code Quality
+
+Write production-quality beginner-friendly code.
+
+Use:
+
+* Semantic HTML
+* CSS variables
+* Reusable CSS classes
+* JavaScript functions
+* Arrays and objects for movie data
+* Event listeners
+* Proper DOM manipulation
+* Meaningful variable and function names
+* Comments for important sections
+
+### Final Output
+
+Provide the complete code for:
+
+**`index.html`**
+
+**`style.css`**
+
+**`script.js`**
+
+The three files should work together immediately when placed in the same folder and opened in a browser.
+
+Create a polished, realistic OTT streaming dashboard rather than a basic student-level webpage.
