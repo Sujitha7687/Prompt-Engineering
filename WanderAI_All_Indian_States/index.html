@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>IndiaGo — India Travel Planner</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<header class="navbar">
+
+    <div class="logo">
+        <span>✦</span>
+        IndiaGo
+    </div>
+
+    <nav>
+        <a href="#explore">Explore</a>
+        <a href="#destinations">Destinations</a>
+        <a href="#planner">Planner</a>
+        <a href="#recommendations">Stay & Dine</a>
+    </nav>
+
+    <button class="nav-button" onclick="scrollToPlanner()">
+        Plan a Trip
+    </button>
+
+</header>
+
+
+<main>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="eyebrow">
+                EXPLORE INDIA
+            </div>
+
+            <h1>
+                Discover India.<br>
+                <span>Plan it your way.</span>
+            </h1>
+
+            <p>
+                Explore beautiful destinations across every Indian state and
+                union territory. Choose your destination, select your trip
+                duration and create a personalized travel plan.
+            </p>
+
+            <div class="search-box">
+
+                <select id="stateSelect">
+                    <option value="">Select a state or union territory</option>
+                </select>
+
+                <button onclick="selectState()">
+                    Explore →
+                </button>
+
+            </div>
+
+            <div class="hero-stats">
+                <div>
+                    <strong>28</strong>
+                    <span>States</span>
+                </div>
+
+                <div>
+                    <strong>8</strong>
+                    <span>Union Territories</span>
+                </div>
+
+                <div>
+                    <strong>100+</strong>
+                    <span>Destinations</span>
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <img
+                id="heroImage"
+                src="https://images.unsplash.com/photo-1524492412937-b28074a5d7da?auto=format&fit=crop&w=1400&q=90"
+                alt="India travel"
+            >
+
+            <div class="hero-image-card">
+
+                <span>TRAVEL INDIA</span>
+
+                <strong>
+                    From mountains<br>
+                    to beaches
+                </strong>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- STATE EXPLORER -->
+
+    <section class="section" id="explore">
+
+        <div class="section-header">
+
+            <div>
+                <div class="eyebrow">
+                    EXPLORE INDIA
+                </div>
+
+                <h2>
+                    Choose your region
+                </h2>
+            </div>
+
+            <p>
+                Select a state or union territory to discover its
+                destinations and attractions.
+            </p>
+
+        </div>
+
+
+        <div class="state-grid" id="stateGrid"></div>
+
+    </section>
+
+
+    <!-- DESTINATIONS -->
+
+    <section
+        class="section hidden"
+        id="destinations"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="eyebrow">
+                    DESTINATIONS
+                </div>
+
+                <h2 id="destinationHeading">
+                    Explore
+                </h2>
+
+            </div>
+
+            <button
+                class="back-button"
+                onclick="showAllStates()"
+            >
+                ← All States
+            </button>
+
+        </div>
+
+
+        <div
+            class="destination-intro"
+            id="destinationIntro"
+        ></div>
+
+
+        <div
+            class="destination-grid"
+            id="destinationGrid"
+        ></div>
+
+    </section>
+
+
+    <!-- PLACE DETAILS -->
+
+    <section
+        class="section hidden"
+        id="placeDetails"
+    >
+
+        <div class="place-detail">
+
+            <div class="place-detail-image">
+
+                <img
+                    id="selectedPlaceImage"
+                    src=""
+                    alt=""
+                >
+
+                <div class="image-label">
+                    <span id="selectedPlaceState"></span>
+                </div>
+
+            </div>
+
+
+            <div class="place-detail-content">
+
+                <div class="eyebrow">
+                    DESTINATION GUIDE
+                </div>
+
+                <h2 id="selectedPlaceName">
+                    Destination
+                </h2>
+
+                <p id="selectedPlaceDescription"></p>
+
+
+                <div class="detail-tags">
+
+                    <span id="bestTime"></span>
+
+                    <span id="travelType"></span>
+
+                    <span id="budgetRange"></span>
+
+                </div>
+
+
+                <button
+                    class="primary-button"
+                    onclick="openPlanner()"
+                >
+                    Create My Trip →
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <div class="attractions-section">
+
+            <div class="section-header compact">
+
+                <div>
+                    <div class="eyebrow">
+                        MUST VISIT
+                    </div>
+
+                    <h2>
+                        Attractions in this destination
+                    </h2>
+                </div>
+
+            </div>
+
+
+            <div
+                class="attraction-grid"
+                id="attractionGrid"
+            ></div>
+
+        </div>
+
+    </section>
+
+
+    <!-- PLANNER -->
+
+    <section
+        class="planner-section hidden"
+        id="planner"
+    >
+
+        <div class="planner-header">
+
+            <div>
+
+                <div class="eyebrow light">
+                    PERSONAL TRIP PLANNER
+                </div>
+
+                <h2 id="plannerTitle">
+                    Plan your trip
+                </h2>
+
+                <p id="plannerSubtitle"></p>
+
+            </div>
+
+
+            <div class="day-selector">
+
+                <span>Trip duration</span>
+
+                <div class="day-controls">
+
+                    <button onclick="changeDays(-1)">
+                        −
+                    </button>
+
+                    <strong id="daysValue">
+                        3
+                    </strong>
+
+                    <button onclick="changeDays(1)">
+                        +
+                    </button>
+
+                </div>
+
+                <small>
+                    days
+                </small>
+
+            </div>
+
+        </div>
+
+
+        <div
+            class="itinerary"
+            id="itinerary"
+        ></div>
+
+
+        <div class="trip-summary">
+
+            <div>
+                <span>Estimated trip budget</span>
+                <strong id="totalBudget">
+                    ₹12,000 – ₹20,000
+                </strong>
+            </div>
+
+            <div>
+                <span>Recommended transport</span>
+                <strong id="transportSummary">
+                    Cab + local transport
+                </strong>
+            </div>
+
+            <div>
+                <span>Travel style</span>
+                <strong id="styleSummary">
+                    Leisure
+                </strong>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- RECOMMENDATIONS -->
+
+    <section
+        class="section hidden"
+        id="recommendations"
+    >
+
+        <div class="section-header">
+
+            <div>
+
+                <div class="eyebrow">
+                    LOCAL RECOMMENDATIONS
+                </div>
+
+                <h2>
+                    Stay, eat & move
+                </h2>
+
+            </div>
+
+            <p>
+                Suggestions to make your destination easier to explore.
+            </p>
+
+        </div>
+
+
+        <div
+            class="recommendation-grid"
+            id="recommendationGrid"
+        ></div>
+
+    </section>
+
+
+    <!-- TIPS -->
+
+    <section
+        class="tips-section hidden"
+        id="tipsSection"
+    >
+
+        <div class="eyebrow">
+            TRAVEL SMART
+        </div>
+
+        <h2>
+            Helpful tips for your trip
+        </h2>
+
+        <div
+            class="tips-grid"
+            id="tipsGrid"
+        ></div>
+
+    </section>
+
+</main>
+
+
+<footer>
+
+    <div class="footer-brand">
+        ✦ IndiaGo
+    </div>
+
+    <p>
+        Discover deeper. Travel better.
+    </p>
+
+    <small>
+        Travel suggestions are for planning purposes.
+        Check current prices, availability, weather and opening hours
+        before travelling.
+    </small>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
