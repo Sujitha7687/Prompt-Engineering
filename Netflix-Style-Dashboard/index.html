@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>StreamFlix | Premium Streaming</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- ==================== NAVIGATION ==================== -->
+    <header class="navbar">
+
+        <div class="nav-left">
+
+            <a href="#" class="logo">
+                Stream<span>Flix</span>
+            </a>
+
+            <nav class="desktop-nav">
+                <a href="#home">Home</a>
+                <a href="#trending">TV Shows</a>
+                <a href="#popular">Movies</a>
+                <a href="#my-list">My List</a>
+            </nav>
+
+        </div>
+
+        <div class="nav-right">
+
+            <div class="search-container">
+                <button class="icon-button search-toggle" id="searchToggle">
+                    <span>⌕</span>
+                </button>
+
+                <input
+                    type="search"
+                    id="searchInput"
+                    class="search-input"
+                    placeholder="Search movies..."
+                    aria-label="Search movies"
+                >
+            </div>
+
+            <button class="icon-button notification-button" title="Notifications">
+                <span>♧</span>
+                <span class="notification-dot"></span>
+            </button>
+
+            <button class="profile-button" title="Profile">
+                <span class="profile-avatar">S</span>
+            </button>
+
+            <button class="menu-button" id="menuButton">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+        </div>
+
+        <nav class="mobile-nav" id="mobileNav">
+            <a href="#home">Home</a>
+            <a href="#trending">TV Shows</a>
+            <a href="#popular">Movies</a>
+            <a href="#my-list">My List</a>
+        </nav>
+
+    </header>
+
+
+    <main>
+
+        <!-- ==================== HERO ==================== -->
+        <section class="hero" id="home">
+
+            <div class="hero-background"></div>
+
+            <div class="hero-content">
+
+                <div class="hero-meta">
+                    <span class="hero-badge">STREAMFLIX ORIGINAL</span>
+                    <span>2026</span>
+                    <span>16+</span>
+                    <span>2h 18m</span>
+                </div>
+
+                <h1>The Last Horizon</h1>
+
+                <p class="hero-description">
+                    When humanity's final colony loses contact with Earth,
+                    a fearless explorer begins a journey beyond the known
+                    frontier to uncover a secret that could change the future
+                    of civilization.
+                </p>
+
+                <div class="hero-details">
+                    <span>⭐ 8.7</span>
+                    <span>Sci-Fi</span>
+                    <span>Adventure</span>
+                    <span>Drama</span>
+                </div>
+
+                <div class="hero-actions">
+
+                    <button class="primary-button" id="heroPlay">
+                        <span>▶</span>
+                        Play Now
+                    </button>
+
+                    <button class="secondary-button" id="heroInfo">
+                        <span>ⓘ</span>
+                        More Info
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="hero-fade"></div>
+
+        </section>
+
+
+        <!-- ==================== SEARCH RESULTS ==================== -->
+        <section class="content-section search-results-section" id="searchResultsSection">
+
+            <div class="section-header">
+                <div>
+                    <p class="section-kicker">DISCOVER</p>
+                    <h2>Search Results</h2>
+                </div>
+            </div>
+
+            <div class="movie-grid" id="searchResults"></div>
+
+            <p class="empty-message" id="noSearchResults">
+                No results found.
+            </p>
+
+        </section>
+
+
+        <!-- ==================== TRENDING ==================== -->
+        <section class="content-section" id="trending">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-kicker">WHAT'S HOT</p>
+                    <h2>Trending Now</h2>
+                </div>
+
+                <button class="view-all">View All →</button>
+
+            </div>
+
+            <div class="horizontal-scroll" id="trendingMovies"></div>
+
+        </section>
+
+
+        <!-- ==================== POPULAR ==================== -->
+        <section class="content-section" id="popular">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-kicker">TOP PICKS</p>
+                    <h2>Popular Movies</h2>
+                </div>
+
+                <div class="carousel-controls">
+
+                    <button
+                        class="carousel-button"
+                        id="popularPrev"
+                        aria-label="Previous movies"
+                    >
+                        ←
+                    </button>
+
+                    <button
+                        class="carousel-button"
+                        id="popularNext"
+                        aria-label="Next movies"
+                    >
+                        →
+                    </button>
+
+                </div>
+
+            </div>
+
+            <div class="carousel-wrapper">
+
+                <div class="horizontal-scroll popular-carousel" id="popularMovies"></div>
+
+            </div>
+
+        </section>
+
+
+        <!-- ==================== CONTINUE WATCHING ==================== -->
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-kicker">KEEP WATCHING</p>
+                    <h2>Continue Watching</h2>
+                </div>
+
+            </div>
+
+            <div class="continue-grid" id="continueWatching"></div>
+
+        </section>
+
+
+        <!-- ==================== RECOMMENDED ==================== -->
+        <section class="content-section">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-kicker">CURATED FOR YOU</p>
+                    <h2>Recommended For You</h2>
+                </div>
+
+            </div>
+
+            <div class="movie-grid" id="recommendedMovies"></div>
+
+        </section>
+
+
+        <!-- ==================== MY LIST ==================== -->
+        <section class="content-section my-list-section" id="my-list">
+
+            <div class="section-header">
+
+                <div>
+                    <p class="section-kicker">YOUR COLLECTION</p>
+                    <h2>My List</h2>
+                </div>
+
+            </div>
+
+            <div class="movie-grid" id="myListMovies"></div>
+
+            <div class="empty-state" id="emptyMyList">
+
+                <div class="empty-icon">＋</div>
+
+                <h3>Your list is empty</h3>
+
+                <p>
+                    Add movies and shows you want to watch later.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- ==================== MOVIE MODAL ==================== -->
+
+    <div class="modal-overlay" id="movieModal">
+
+        <div class="movie-modal">
+
+            <button class="modal-close" id="modalClose">
+                ×
+            </button>
+
+            <div class="modal-image">
+                <img id="modalImage" src="" alt="Movie poster">
+            </div>
+
+            <div class="modal-content">
+
+                <p class="modal-kicker">STREAMFLIX</p>
+
+                <h2 id="modalTitle">Movie Title</h2>
+
+                <div class="modal-meta">
+                    <span id="modalYear">2026</span>
+                    <span id="modalDuration">2h 10m</span>
+                    <span id="modalRating">⭐ 8.5</span>
+                    <span id="modalGenre">Drama</span>
+                </div>
+
+                <p id="modalDescription">
+                    Movie description.
+                </p>
+
+                <div class="modal-actions">
+
+                    <button class="primary-button" id="modalPlay">
+                        ▶ Play Now
+                    </button>
+
+                    <button class="secondary-button" id="modalList">
+                        + Add to My List
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ==================== TOAST ==================== -->
+
+    <div class="toast" id="toast">
+        <span id="toastMessage">Added to My List</span>
+    </div>
+
+
+    <footer class="footer">
+
+        <div class="footer-logo">
+            Stream<span>Flix</span>
+        </div>
+
+        <p>
+            A fictional streaming platform created using HTML, CSS and JavaScript.
+        </p>
+
+        <p class="copyright">
+            © 2026 StreamFlix. Demo project.
+        </p>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
