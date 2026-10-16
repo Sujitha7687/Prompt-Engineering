@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AI Resume Builder: fill in, pick a template, save as PDF</title>
+<meta name="description" content="Build a clean, role-focused resume in minutes. Choose from five templates and save as PDF from your browser.">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="nav">
+  <a class="logo" href="#top"><img src="assets/favicon.svg" alt="" width="30" height="30">AI Resume Builder</a>
+  <nav aria-label="Main"><a href="#how">How it works</a><a href="#templates">Templates</a><a href="#builder">Builder</a></nav>
+  <button id="theme" class="icon-btn" type="button" aria-label="Switch light/dark theme">◐</button>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="hero-text">
+    <h1>Build a resume that gets you noticed.</h1>
+    <p>Share your details, choose a template and get a polished resume written around the role you want. No sign-up, and nothing leaves your browser.</p>
+    <div class="cta-row"><a class="btn sun" href="#builder">Start building</a><a class="btn ghost" href="#templates">Browse templates</a></div>
+    <ul class="tags" aria-label="Popular target roles"><li>Frontend Developer</li><li>Data Analyst</li><li>UI/UX Designer</li><li>Software Engineer</li><li>Marketing Executive</li></ul>
+  </div>
+  <img class="hero-img" src="assets/hero.svg" alt="Illustration of resume pages with an AI draft badge and a green check mark" width="520" height="440">
+</section>
+
+<section id="how" class="wrap">
+  <h2 class="sec-title">Three steps to a finished resume</h2>
+  <ol class="steps">
+    <li><img src="assets/step-fill.svg" alt="" width="160" height="120"><h3>Tell us about you</h3><p>Add contact details, skills, projects, internships and certifications. Choose your target role and we'll shape the wording around it.</p></li>
+    <li><img src="assets/step-style.svg" alt="" width="160" height="120"><h3>Pick your look</h3><p>Five templates, five accent colours. Switch any time and watch your resume change instantly.</p></li>
+    <li><img src="assets/step-pdf.svg" alt="" width="160" height="120"><h3>Print or save as PDF</h3><p>Review the preview, tweak any line, then print or save a PDF using your browser.</p></li>
+  </ol>
+</section>
+
+<section id="templates" class="band">
+  <div class="wrap">
+    <h2 class="sec-title">Choose your resume template</h2>
+    <p class="lead">Each preview below shows sample content. Pick one and it applies to your resume straight away.</p>
+    <div id="gallery" class="gallery" role="radiogroup" aria-label="Resume template"></div>
+    <div class="swatches"><span>Accent colour</span><div id="swatches"></div></div>
+  </div>
+</section>
+
+<section id="builder" class="wrap builder">
+  <div class="b-head"><h2 class="sec-title">Build your resume</h2>
+  <p class="lead">Fields marked * are required. Use only facts that are true: the builder never adds qualifications you didn't enter.</p></div>
+  <div class="b-grid">
+    <form id="f" class="form" novalidate autocomplete="off">
+      <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+      <fieldset><legend>Personal details</legend>
+        <div class="grid2">
+          <label class="fld"><span>Full name *</span><input id="name" placeholder="e.g. Kavya Raman"></label>
+          <label class="fld"><span>Email *</span><input id="email" type="email" placeholder="you@example.com"></label>
+          <label class="fld"><span>Phone</span><input id="phone" placeholder="+91 98765 43210"></label>
+          <label class="fld"><span>City, State</span><input id="location" placeholder="Salem, Tamil Nadu"></label>
+        </div>
+        <label class="fld"><span>Links (one per line: LinkedIn, GitHub, portfolio)</span><textarea id="links" rows="2" placeholder="github.com/yourname"></textarea></label>
+      </fieldset>
+
+      <fieldset><legend>Target role and writing style</legend>
+        <div class="grid2">
+          <label class="fld"><span>Target role *</span><input id="role" list="roles" placeholder="Pick or type a role"></label>
+          <label class="fld"><span>Level</span><select id="level"><option>Entry-level</option><option>Aspiring</option><option>Junior</option></select></label>
+          <label class="fld"><span>Tone</span><select id="tone"><option value="concise">Concise</option><option value="confident">Confident</option><option value="friendly">Friendly</option></select></label>
+          <label class="fld"><span>Extra instruction (optional)</span><input id="extra" placeholder="e.g. Mention teamwork"></label>
+        </div>
+        <datalist id="roles"></datalist>
+      </fieldset>
+
+      <fieldset><legend>Professional summary</legend>
+        <label class="fld"><span>Summary (edit freely)</span><textarea id="summary" rows="4" placeholder="Press “Draft summary”, or write your own."></textarea></label>
+        <button type="button" id="draftBtn" class="btn small">Draft summary from my details</button>
+        <details class="prompt"><summary>See the prompt behind the draft</summary><pre id="promptBox">Choose a role to see the prompt.</pre></details>
+      </fieldset>
+
+      <fieldset><legend>Skills</legend>
+        <label class="fld"><span>Skills (comma separated)</span><textarea id="skills" rows="2" placeholder="HTML, CSS, JavaScript, Git"></textarea></label>
+        <div class="kw-wrap"><small>Suggested for your role. Add only what you really know:</small><div id="kw" class="kw"></div></div>
+      </fieldset>
+
+      <fieldset><legend>Job match (optional)</legend>
+        <label class="fld"><span>Paste a job description</span><textarea id="jd" rows="5" placeholder="Paste the requirements section of the job posting"></textarea></label>
+        <button type="button" id="jdBtn" class="btn small">Compare with my skills</button>
+        <div id="jdOut" class="jd-out" aria-live="polite"></div>
+      </fieldset>
+
+      <fieldset><legend>Education</legend><div id="edu-list"></div><button type="button" class="btn small" data-add="edu">+ Add education</button></fieldset>
+      <fieldset><legend>Projects</legend><div id="proj-list"></div><button type="button" class="btn small" data-add="proj">+ Add project</button></fieldset>
+      <fieldset><legend>Internships and work experience</legend><div id="exp-list"></div><button type="button" class="btn small" data-add="exp">+ Add experience</button></fieldset>
+      <fieldset><legend>Certifications</legend><label class="fld"><span>One per line</span><textarea id="certs" rows="3" placeholder="Certificate name, issuer, year"></textarea></label></fieldset>
+
+      <div class="actions">
+        <button type="button" id="buildBtn" class="btn primary">Build resume</button>
+        <button type="button" id="sampleBtn" class="btn">Load sample</button>
+        <button type="button" id="resetBtn" class="btn">Reset form</button>
+      </div>
+    </form>
+
+    <aside class="preview">
+      <div class="p-bar">
+        <label>Template <select id="tplSel"></select></label>
+        <div class="btns"><button type="button" id="docxBtn" class="btn small">Download Word</button><button type="button" id="printBtn" class="btn sun small">Print / Save as PDF</button></div>
+      </div>
+      <div class="opts">
+        <label><input type="checkbox" id="onePage"> Fit to one page</label>
+        <label><input type="checkbox" id="usePhoto"> Add profile photo</label>
+        <span id="photoRow" hidden><input type="file" id="photoFile" accept="image/*" aria-label="Choose a profile photo"></span>
+      </div>
+      <p class="hint" id="fitNote" aria-live="polite"></p>
+      <p class="hint">Click any text in the resume to edit it. Changing the form refreshes the preview and replaces manual edits. The Word file uses a clean single-column layout without the photo.</p>
+      <div id="mount" class="mount"></div>
+    </aside>
+  </div>
+</section>
+</main>
+
+<footer class="foot"><div class="wrap"><strong>AI Resume Builder</strong><p>Capstone project: Prompt Engineering and Web Application. Everything runs in your browser and your details are never uploaded or saved. Always check dates, links and facts before you send a resume.</p></div></footer>
+
+<div id="print-root"></div>
+<script src="js/app.js"></script>
+</body>
+</html>

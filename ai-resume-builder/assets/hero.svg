@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 440" role="img" aria-label="Resume pages with an AI badge and a success check">
+<style>.f1{animation:fl 5s ease-in-out infinite}.f2{animation:fl 6s ease-in-out -2s infinite}.f3{animation:fl 4s ease-in-out -1s infinite}@keyframes fl{50%{transform:translateY(-12px)}}@media(prefers-reduced-motion:reduce){*{animation:none!important}}</style>
+<path opacity=".9" d="M70 230C50 120 160 30 280 50s200 90 180 200-100 170-210 160S90 340 70 230z" fill="#818CF8"/>
+<circle cx="450" cy="80" r="38" fill="#F59E0B"/><circle cx="60" cy="370" r="22" fill="#14B8A6"/>
+<g class="f2"><g transform="rotate(9 345 190)"><rect x="250" y="62" width="190" height="250" rx="14" fill="#fff" stroke="#0F172A" stroke-width="3"/>
+<rect x="270" y="86" width="90" height="12" rx="6" fill="#0F172A"/><rect x="270" y="112" width="140" height="7" rx="3" fill="#E2E8F0"/><rect x="270" y="130" width="120" height="7" rx="3" fill="#E2E8F0"/>
+<rect x="270" y="162" width="60" height="9" rx="4" fill="#4F46E5"/><rect x="270" y="182" width="145" height="7" rx="3" fill="#E2E8F0"/><rect x="270" y="198" width="130" height="7" rx="3" fill="#E2E8F0"/><rect x="270" y="214" width="100" height="7" rx="3" fill="#E2E8F0"/></g></g>
+<g class="f1"><rect x="110" y="96" width="220" height="290" rx="16" fill="#fff" stroke="#0F172A" stroke-width="3.5"/>
+<rect x="110" y="96" width="220" height="74" rx="16" fill="#4F46E5"/><rect x="110" y="140" width="220" height="30" fill="#4F46E5"/>
+<circle cx="152" cy="134" r="24" fill="#F59E0B" stroke="#fff" stroke-width="4"/><circle cx="152" cy="127" r="8" fill="#fff"/><path d="M137 146a15 12 0 0 1 30 0z" fill="#fff"/>
+<rect x="190" y="122" width="100" height="12" rx="6" fill="#fff"/><rect x="190" y="142" width="70" height="8" rx="4" fill="#C7D2FE"/>
+<rect x="130" y="190" width="70" height="10" rx="5" fill="#0F172A"/><rect x="130" y="210" width="180" height="7" rx="3" fill="#E2E8F0"/><rect x="130" y="226" width="160" height="7" rx="3" fill="#E2E8F0"/>
+<rect x="130" y="254" width="50" height="10" rx="5" fill="#0F172A"/>
+<rect x="130" y="276" width="46" height="20" rx="10" fill="#14B8A6"/><rect x="182" y="276" width="56" height="20" rx="10" fill="#F59E0B"/><rect x="244" y="276" width="46" height="20" rx="10" fill="#F59E0B"/>
+<rect x="130" y="312" width="170" height="7" rx="3" fill="#E2E8F0"/><rect x="130" y="328" width="140" height="7" rx="3" fill="#E2E8F0"/><rect x="130" y="344" width="110" height="7" rx="3" fill="#E2E8F0"/></g>
+<g class="f3"><rect x="330" y="40" width="120" height="44" rx="22" fill="#0F172A"/><text x="352" y="68" font-family="Arial,sans-serif" font-weight="700" font-size="18" fill="#fff">AI draft</text><path d="M424 52l4 9 9 4-9 4-4 9-4-9-9-4 9-4z" fill="#F59E0B"/></g>
+<g class="f3"><circle cx="335" cy="352" r="36" fill="#14B8A6" stroke="#0F172A" stroke-width="3.5"/><path d="M318 352l12 12 22-24" fill="none" stroke="#fff" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/></g>
+<path d="M95 70l5 12 12 5-12 5-5 12-5-12-12-5 12-5z" fill="#fff"/>
+</svg>
